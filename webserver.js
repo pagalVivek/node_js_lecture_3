@@ -9,15 +9,15 @@ const server = http.createServer((req, res) => {
     
     if ( path == '/' || path.toLocaleLowerCase() == '/home'){
         res.writeHead(200)
-        res.end(html.replace("{{%CONTENT%}}", "Home"))
+        res.end(html.replace("{{%CONTENT%}}", "You are in Home page"))
     }
     else if ( path.toLocaleLowerCase() == '/about'){
         res.writeHead(200)
-        res.end(html)
+        res.end(html.replace("{{%CONTENT%}}",'You are in About page'))
     }
     else if ( path.toLocaleLowerCase() == '/contact'){
         res.writeHead(200)
-        res.end(html)
+        res.end(html.replace("{{%CONTENT%}}", 'You are in Contact page'))
     }
     else if ( path.toLocaleLowerCase() == '/products'){
         res.writeHead(200, {'Content-Type': 'text/html'})
